@@ -14,6 +14,8 @@ RESTGen will only look at the FIRST member of any array, so ideally that will be
 RESTGen can only work with what you give it.  It will warn you of things like empty arrays (it will create them as arrays of strings) and nulls (it will create those as strings as well).  The program will warn you about those and also place comments in the struct code where these things occur.
  
 Unlike previous versions, this one will only generate the structs themselves, not any handling code for them, assuming that you will use objects the cJsonObject class (introduced in in DataFlex 19.0) to do that.
+
+This version is intened for compilation with DataFlex 2022 (v20.1) - earelier versions may have issues.
  
 Enjoy!  :-)
 
