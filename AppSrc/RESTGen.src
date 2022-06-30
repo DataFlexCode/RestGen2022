@@ -1,0 +1,69 @@
+﻿Use DFAllEnt.pkg
+Use cCJStandardCommandBarSystem.pkg
+Use StdAbout.pkg
+    
+Object oApplication is a cApplication
+    Set pbPreserveEnvironment to True
+End_Object
+
+Object oToolTipController is a cToolTipController
+    Move Self to ghoToolTipController
+End_Object
+
+Use oEditContextMenu.pkg
+Use oDEOEditContextMenu17.pkg
+
+Object oMain is a Panel
+    Set Icon to "Unicorn.ico"
+
+    Property Handle phoViewMenu 0
+    Property Handle phoReportMenu 0
+
+    Set Label To "Generate structs from JSON"
+    Set Location to 4 3
+    Set Size to 300 450
+
+    Object oCommandBarSystem is a cCJCommandBarSystem
+        Set pbTimerUpdate to True
+
+        Object oStatusBar is a cCJStatusBar
+
+            Object oStatusPane1 is a cCJStatusBarPane
+                Set piID to sbpIDIdlePane
+                Set pbStyleStretch to True
+            End_Object
+
+            Object oStatusPane2 is a cCJStatusBarPane
+                Set phoViewPane to Self
+                Set pbStyleStretch to True
+            End_Object
+
+        End_Object
+
+    End_Object
+
+    Object oClientArea is a ClientArea
+        Use StdAbout.pkg
+        Use Generator.vw
+        
+        Procedure Activate_About
+            Send DoAbout "RESTGen2022 JSON struct generator" "1.1.0" "Copyright (c) Unicorn InterGlobal Limited" "Unicorn InterGlobal Limited" "UnicornLogo.bmp"
+        End_Procedure
+
+    End_Object
+    
+    // Seems to be a wee bug in Set View_Mode to ViewMode_Zoom,
+    // so we need to do a tiny re-size to work around that.
+    Procedure MakeGoodPanelSize
+        Integer iSize
+        
+        Get GuiSize to iSize
+        Set GuiSize to (Hi(iSize) - 1) (Low(iSize))
+        Send Adjust_Logicals
+    End_Procedure
+
+End_Object
+
+Send Activate_oGenerator of (oClientArea(oMain))
+Send MakeGoodPanelSize of oMain
+Start_UI
