@@ -4,10 +4,10 @@ Active=1
 SubDirectories=1
 WholeWordOnly=0
 SearchWhere=0
-Location=C:\Projects\RestGen2022\IdeSrc\Mike Peat_FindInFiles.dsk
-[C:\Projects\RestGen2022\AppSrc]
+Location=C:\Temp\RestGen2022\IdeSrc\Mike Peat_FindInFiles.dsk
+[C:\Temp\RestGen2022\AppSrc]
 IsEnabled=1
-[C:\Projects\RestGen2022\DDSrc]
+[C:\Temp\RestGen2022\DDSrc]
 IsEnabled=1
-[C:\Projects\RestGen2022\AppHtml]
+[C:\Temp\RestGen2022\AppHtml]
 IsEnabled=1
