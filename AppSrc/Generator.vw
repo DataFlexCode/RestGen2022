@@ -42,7 +42,7 @@ Object oGenerator is a dbView
     Set Border_Style to Border_Thick
     Set Size to 192 433
     Set Location to 0 0
-    Set Label to "Generator"
+    Set Label to "JSON Struct Generator"
     Set Minimize_Icon to False
     Set Maximize_Icon to False
     Set Sysmenu_Icon  to False

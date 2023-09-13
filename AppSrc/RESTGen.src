@@ -19,7 +19,7 @@ Object oMain is a Panel
     Property Handle phoViewMenu 0
     Property Handle phoReportMenu 0
 
-    Set Label To "Generate structs from JSON"
+    Set Label To "RESTGen: Generate structs from JSON"
     Set Location to 4 3
     Set Size to 300 450
 
